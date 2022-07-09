@@ -1,0 +1,52 @@
+header {
+    display: grid;
+    grid-template-columns:  1fr 0.5fr 0.5fr;
+    background-color: rgb(150, 150, 238);
+}
+.ul-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+li {
+    text-transform: uppercase;
+    list-style: none;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+.search-in {
+    width: 240px;
+    height: 25px;
+    margin: 5px;
+    background-color:rgb(151, 151, 238);
+    border:1px solid #000;
+    font-size: 16px;
+    outline: none;
+}
+.search {
+    justify-self:end;
+    align-self:center;
+    margin-right: 20px;
+}
+.search-btn {
+    width: 30px;
+    height: 30px;  
+    background-color: rgb(110, 110, 231); 
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.log-in {
+    justify-self:end;
+    align-self:center;
+    margin-right: 20px;
+}
+.log-in-btn {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(110, 110, 231);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
