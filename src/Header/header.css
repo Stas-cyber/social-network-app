@@ -86,7 +86,7 @@ a {
         height: 20px;
     }
 }
-@media (max-width: 420px) {
+@media (max-width: 425px) {
     .log-in-btn {
         width: 60px;
         height: 20px;
