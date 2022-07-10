@@ -1,13 +1,15 @@
 import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import './header.css';
-
+import MenuBurger from './menu-burger';
+import { AvatarMini } from '../Profile/Avatar/avatar';
 const Header = () => {
   return (
     <header>
 
       <div className="menu">
+      <div><MenuBurger/></div>
         <ul className='ul-header'>
-          <li><a href='.'>Моя страница</a></li>
+          <li><a href='.'>Моя Страница</a></li>
           <li><a href='.'>Настройки</a></li>
         </ul>
       </div>
