@@ -1,5 +1,4 @@
-import { keyboard } from '@testing-library/user-event/dist/keyboard';
-import './menu-style.css';
+import './menuStyle.css';
 
 const MenuBurger = () => {
     return (

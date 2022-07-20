@@ -1,0 +1,145 @@
+.container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 2%;
+    height: 600px;
+}
+.users {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(9, 80px);
+    border: 5px solid rgb(167, 167, 167) ;
+    border-radius: 5px 0px 0px 5px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.user {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border-bottom: 2px solid rgb(183, 183, 183);
+    padding: 1%;  
+}
+.user a {
+    margin-left: 15px;
+}
+.dialog {
+    display: grid;
+    grid-template-rows: 90% 10%;
+    border-radius: 0px 80px 5px 0px;
+    border: 5px solid rgb(167, 167, 167);
+    border-left: none;
+}
+.chat {
+    display: grid;
+
+}
+.messang {
+    display: grid;
+    grid-template-rows: 1fr;
+    align-self: end;
+}
+.item1 {
+    height: 40%;
+    background-color: rgb(150, 150, 238);
+    border-radius: 0px 10px 10px 10px ;
+    margin: 1%;
+    padding: 2%;
+    justify-self: start;
+}
+.item2 {
+    height: 40%;
+    background-color: rgb(150, 150, 238);
+    border-radius: 10px 0px 10px 10px ;
+    margin: 1%;
+    padding: 2%;
+    justify-self: end;
+}
+.input {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    
+}
+.messangeIn {
+    width: 90%;
+    height: 70%;
+    font-size: 20px;
+    background-color: rgb(220, 220, 220);
+    border: none;
+    border-radius:8px ;
+    border-bottom: 2px solid black;
+    outline: none;
+    justify-self: end;
+    align-self: center;
+}
+.messangeBtn {
+    width: 50%;
+    height: 50%;
+    background-color: rgb(150, 150, 238);
+    border: none;
+    border-radius: 0% 50% 50% 0;
+    justify-self: start;
+    align-self: center;
+    cursor: pointer;
+}
+.blockMess {
+    display: grid;
+    grid-template-columns: 9% 91%;
+}
+.avatarBlock {
+    display: grid;
+    justify-self: end;
+}
+.avatarBlock img {
+    justify-self: end;
+    width: 80%;
+    height: 70%;
+    border-radius: 50%;    
+}
+@media (max-width: 768px) {
+    .avatarBlock {
+        display: none;
+    }
+    .blockMess {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 576px) {
+    .user a {
+        display: none;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 78px 1fr;
+        margin: 2%;
+        height: 600px;
+    }
+    .item1 {
+        margin: 3%;
+    }
+    .item2 {
+        margin: 3%;
+    }
+    .messangeIn {
+        width: 80%;
+        height: 60%;
+        font-size: 15px; 
+    }
+    .messangeBtn {
+        width: 50%;
+        height: 50%;
+    }
+    .input {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        
+    }
+}
+@media (max-width: 375px) {
+    .item1 {
+        margin: 5%;
+    }
+    .item2 {
+        margin: 5%;
+    }
+}

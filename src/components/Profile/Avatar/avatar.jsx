@@ -7,10 +7,10 @@ const Avatar = () => {
       </div>
   );
 }
-const AvatarMini = () => {
+const AvatarMini = (props) => {
   return (
       <div className='avatarMini-block'>
-        <img src='https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg'/>
+        <img src={props.avatar}/>
       </div>
   );
 }
