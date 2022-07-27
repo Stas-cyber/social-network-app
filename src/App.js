@@ -3,11 +3,11 @@ import './App.css';
 import Header from './components/Header/header';
 import Profil from './components/Profile/Profile/profil';
 
-const App = () => {
+const App = (props) => {
   return (
     <div className="App">
       <Header/>
-      <Profil/>
+      <Profil state={props.state}/>
     </div>
   );
 }

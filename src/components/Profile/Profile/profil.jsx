@@ -7,16 +7,16 @@ import News from '../../News/RibbonNews';
 import {Friends} from '../../Friends/Friends';
 import Messanges from '../../Messenger/Messanges';
 import Sursribers from '../../Sursribers/Sursribers';
-import Settings from '../../Settings/Settings';
+import Settings from '../../SettingsSite/Settings';
 
-const Profil = () => {
+const Profil = (props) => {
   return (
     <BrowserRouter>
       <div className='container'>
         <div className="ribMenu"><RibbonMenu /></div>
         <Routes>
           <Route path='/profile' element={<ProfileInfo/>}/>
-          <Route path='/messanges' element={<Messanges/>} />
+          <Route path='/messanges' element={<Messanges messanger={props.state.MessangePage}/>} />
           <Route path='/news' element={<News/>} />
           <Route path='/friends' element={<Friends/>} />
           <Route path='/sursribers' element={<Sursribers/>} />
