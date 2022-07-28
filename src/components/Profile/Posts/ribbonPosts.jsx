@@ -1,21 +1,7 @@
 import './ribbonPosts.css';
 import { AvatarMini } from '../Avatar/avatar';
 
-const postData= [
-    {
-      avatar: 'https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg',
-      message: 'Hello World',
-      date: '13 апреля',
-      time: '12:45'
-    },
-    {
-      avatar: 'https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg',
-      message: 'Это я))',
-      img: 'https://st2.depositphotos.com/1000647/8123/i/600/depositphotos_81232590-stock-photo-astronaut-in-outer-space.jpg',
-      date: '16 июля',
-      time: '17:01'
-    }
-]
+
  
 const Post = (props) => {
   return (
@@ -28,10 +14,10 @@ const Post = (props) => {
   );
 }
 
-const RibbonPosts = () => {
+const RibbonPosts = (props) => {
   return (
     <div className='posts-menu'>
-      {postData.map(post => <Post avatar={post.avatar} date={post.date} time={post.time} message={post.message} img={post.img}/>)}
+      {props.posts.postData.map(post => <Post avatar={post.avatar} date={post.date} time={post.time} message={post.message} img={post.img}/>)}
     </div>
   );
 }
