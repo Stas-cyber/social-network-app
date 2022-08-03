@@ -15,7 +15,10 @@ const Profil = (props) => {
       <div className='container'>
         <div className="ribMenu"><RibbonMenu /></div>
         <Routes>
-          <Route path='/profile' element={<ProfileInfo posts={props.state.PostPage}/>}/>
+          <Route path='/profile' element={<ProfileInfo posts={props.state.PostPage} 
+                                                      addPost={props.addPost} 
+                                                      newPost={props.state.PostPage.newPost}
+                                                      updateNewPost={props.updateNewPost}/>}/>
           <Route path='/messanges' element={<Messanges messanger={props.state.MessangePage}/>} />
           <Route path='/news' element={<News news={props.state.NewsPage}/>} />
           <Route path='/friends' element={<Friends friends={props.state.FriendsPage}/>} />

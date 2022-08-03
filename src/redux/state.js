@@ -9,11 +9,12 @@ const avatar = [
     'https://cdnn11.img.sputnik.by/img/102740/32/1027403224_469:0:2516:2047_1920x0_80_0_0_3fe82994d9234f9dc9f29d7ae8c39d3d.jpg',
     'https://knowhistory.ru/sites/default/files/styles/event/public/images/1284237450_tereshkova.jpg?itok=7faDVbIP',
     'https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg'
-]
-
-const state = {
+];
+const store = {
+    state: {
+        
     MessangePage: {
-        users: [
+            users: [
             { id: 1, img: avatar[0], name: "Петр Климук" },
             { id: 2, img: avatar[1], name: "Веселый космонавт" },
             { id: 3, img: avatar[2], name: "Веселый космонавт" },
@@ -37,16 +38,17 @@ const state = {
             {
                 avatar: avatar[9],
                 message: 'Hello World',
-                date: '13 апреля',
-                time: '12:45'
-            },
-            {
+                    img: '',
+                    date: '13 июля',
+                    time: '12:45'
+                },
+                {
                 avatar: avatar[9],
                 message: 'Это я))',
                 img: 'https://st2.depositphotos.com/1000647/8123/i/600/depositphotos_81232590-stock-photo-astronaut-in-outer-space.jpg',
-                date: '16 июля',
-                time: '17:01'
-            }
+                    date: '16 мая',
+                    time: '17:01'
+                }
         ]
     },
     NewsPage: {
@@ -74,56 +76,79 @@ const state = {
     FriendsPage: {
         users: [
             {
-                img: avatar[0],
-                name: "Петр Климук"
-            },
-            {
-                img: avatar[1],
-                name: "Веселый космонавт"
-            },
-            {
-                img: avatar[2],
-                name: "Веселый космонавт"
-            },
-            {
-                img: avatar[3],
-                name: "Юрий Гагарин"
-            },
-            {
-                img: avatar[4],
-                name: "Валентин Данилович"
-            },
-            {
-                img: avatar[5],
-                name: "Веселый космонавт"
-            },
-            {
-                img: avatar[6],
-                name: "Владимир Ковалёнок"
-            },
-            {
-                img: avatar[7],
-                name: "Олег Новицкий"
-            },
-            {
-                img: avatar[8],
-                name: "Валентина Терешкова"
-            }
-        ]
+                    img: avatar[0],
+                    name: "Петр Климук"
+                },
+                {
+                    img: avatar[1],
+                    name: "Веселый космонавт"
+                },
+                {
+                    img: avatar[2],
+                    name: "Веселый космонавт"
+                },
+                {
+                    img: avatar[3],
+                    name: "Юрий Гагарин"
+                },
+                {
+                    img: avatar[4],
+                    name: "Валентин Данилович"
+                },
+                {
+                    img: avatar[5],
+                    name: "Веселый космонавт"
+                },
+                {
+                    img: avatar[6],
+                    name: "Владимир Ковалёнок"
+                },
+                {
+                    img: avatar[7],
+                    name: "Олег Новицкий"
+                },
+                {
+                    img: avatar[8],
+                    name: "Валентина Терешкова"
+                }
+            ]
     },
     SurscribersPage: {
-        users: [
-            {
-                name: 'Злой космонавт',
-                img: 'https://st2.depositphotos.com/1011081/8636/i/600/depositphotos_86360046-stock-photo-deadastronaut-in-outer-space-elements.jpg'
-            },
-            {
-                name: 'Инопланетянин',
-                img: 'https://n1s2.hsmedia.ru/f2/0b/18/f20b187aed08ec8b22db68381676694f/728x410_1_d620060a6772cdecbea07f94ce49058f@3840x2160_0xac120003_8182750811628506920.jpg'
-            }
-        ]
+            users: [
+                {
+                    name: 'Злой космонавт',
+                    img: 'https://st2.depositphotos.com/1011081/8636/i/600/depositphotos_86360046-stock-photo-deadastronaut-in-outer-space-elements.jpg'
+                },
+                {
+                    name: 'Инопланетянин',
+                    img: 'https://n1s2.hsmedia.ru/f2/0b/18/f20b187aed08ec8b22db68381676694f/728x410_1_d620060a6772cdecbea07f94ce49058f@3840x2160_0xac120003_8182750811628506920.jpg'
+                }
+            ]
+    }
+    },
+
+    callSurscribers() {
+    },
+
+    surscriber(observer) {
+        this.callSurscribers = observer;
+    },
+
+    addPost(postMess) {
+        let addNewPost = {
+            avatar: 'https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg',
+            message: postMess,
+            date: '23 июля',
+            time: '12:45'
+        };
+        this.state.PostPage.postData.unshift(addNewPost);
+        this.callSurscribers(this.state);
+    },
+
+    updateNewPost (newText) {
+        this.state.PostPage.newPost = newText;
+        this.callSurscribers(this.state);
     }
 }
 
-
-export default state;
+export default store;
