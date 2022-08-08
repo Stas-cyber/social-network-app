@@ -1,3 +1,4 @@
+
 import './menuStyle.css';
 
 const MenuBurger = () => {
@@ -17,6 +18,7 @@ const MenuBurger = () => {
           <li className="menu__item"><a href=".">Фотографии</a></li>
           <li className="menu__item"><a href=".">Видео</a></li>
         </ul>
+        
     </div>
     );
   }
