@@ -1,0 +1,8 @@
+.block-fotos {
+    margin: 2%;
+}
+.block-fotos img {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+}

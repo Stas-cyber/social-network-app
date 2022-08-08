@@ -1,5 +1,5 @@
 import './index.css';
-import store from './redux/state';
+import store from './redux/store';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 let funRender = () => {
     ReactDOM.render(
       <React.StrictMode>
-        <App state={store.state} addPost={store.addPost.bind(store)} updateNewPost={store.updateNewPost.bind(store)}/>
+        <App state={store.state} dispatch={store.dispatch.bind(store)}/>
       </React.StrictMode>,
       document.getElementById('root')
     );

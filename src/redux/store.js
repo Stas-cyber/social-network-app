@@ -1,3 +1,6 @@
+import dialogsReducer from "./dialogsReduser";
+import profileReducer from "./profileReduser";
+
 const avatar = [
     'https://rus.team/images/article/4883/2019-07-09-330_15688-2_859650.webp',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJIW9gwPxKACtL0y3fDqpdfFYeFOjubquyA&usqp=CAU',
@@ -26,30 +29,32 @@ const store = {
             { id: 9, img: avatar[8], name: "Валентина Терешкова" },
         ],
         usersMessanges: [
-            { img: avatar[3], mess: "Привет" },
-            { img: avatar[9], mess: "Привет" },
-            { img: avatar[3], mess: "Как дела?" },
-            { img: avatar[9], mess: "Плохо" },
-            { img: avatar[3], mess: "Что случилось?" },
-        ]
+            { img: avatar[3], mess: "Привет", },
+            { img: avatar[9], mess: "Привет", },
+            { img: avatar[3], mess: "Как дела?", },
+            { img: avatar[9], mess: "Плохо", },
+            { img: avatar[3], mess: "Что случилось?",  },
+        ],
+        newMess: ''
     },
     PostPage: {
         postData: [
             {
                 avatar: avatar[9],
                 message: 'Hello World',
-                    img: '',
-                    date: '13 июля',
-                    time: '12:45'
+                img: '',
+                date: '13 июля',
+                time: '12:45'
                 },
                 {
                 avatar: avatar[9],
                 message: 'Это я))',
                 img: 'https://st2.depositphotos.com/1000647/8123/i/600/depositphotos_81232590-stock-photo-astronaut-in-outer-space.jpg',
-                    date: '16 мая',
-                    time: '17:01'
+                date: '16 мая',
+                time: '17:01'
                 }
-        ]
+        ],
+        newPost: ''
     },
     NewsPage: {
         textData: [
@@ -133,22 +138,22 @@ const store = {
     surscriber(observer) {
         this.callSurscribers = observer;
     },
-
-    addPost(postMess) {
-        let addNewPost = {
-            avatar: 'https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg',
-            message: postMess,
-            date: '23 июля',
-            time: '12:45'
-        };
-        this.state.PostPage.postData.unshift(addNewPost);
-        this.callSurscribers(this.state);
-    },
-
-    updateNewPost (newText) {
-        this.state.PostPage.newPost = newText;
-        this.callSurscribers(this.state);
+    dispatch(action) {
+        this.state.PostPage = profileReducer(this.state.PostPage, action);
+        this.state.MessangePage = dialogsReducer(this.state.MessangePage, action)
+        this.callSurscribers(this.state)
     }
-}
+    }
+;
+    
+
+    
+    // localStorage.setItem('store', JSON.stringify(store));
+
+    // if (localStorage.getItem(store) != undefined) {
+    //     store = JSON.parse(localStorage.getItem(store));
+    //     store.surscriber()
+    // }
+
 
 export default store;

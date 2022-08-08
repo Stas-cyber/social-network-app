@@ -1,4 +1,5 @@
 import React from "react";
+import { addPostActionCreate, onPostActionCreate } from "../../../redux/profileReduser";
 import { RibbonPosts } from "../Posts/ribbonPosts";
 const ProfileInfo = (props) => {
 
@@ -6,13 +7,13 @@ const ProfileInfo = (props) => {
     
     let onPostChange = () => {
         let text = newPostIn.current.value;
-         props.updateNewPost(text);
+         props.dispatch(onPostActionCreate(text));
      } 
 
     let addPost = () => {
-        let text = newPostIn.current.value;
-        props.addPost(text);
+        props.dispatch(addPostActionCreate());
         newPostIn.current.value = '';
+        props.posts.newPost = '';
     }
 
     return (

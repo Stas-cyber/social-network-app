@@ -1,6 +1,6 @@
-import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { addMessActionCreate, onMessActionCreate } from '../../redux/dialogsReduser';
 import { AvatarMini } from '../Profile/Avatar/avatar';
 import s from './Messanges.module.css';
 
@@ -21,11 +21,22 @@ const Avatar = (props) => {
 }
 
 const Item = (props) => {
-  return <div className={s.blockMess}><Avatar avatar={props.img}/><p className={s.item1}>{props.mess}</p></div>
+  return <div className={s.blockMess}><Avatar avatar={props.img}/><p className={s.item}>{props.mess}</p></div>
 } 
 
 const Messanges = (props) => {
- 
+  let newMessIn = React.createRef(); 
+    
+  let onMessChange = () => {
+      let text = newMessIn.current.value;
+       props.dispatch(onMessActionCreate(text));
+   } 
+
+  let addMess = () => {
+      props.dispatch(addMessActionCreate());
+      newMessIn.current.value = '';
+      props.messanger.newMess = '';
+  }
   return (
         <div className={s.container}>
           <div className= {s.users}>
@@ -38,8 +49,8 @@ const Messanges = (props) => {
               </div>
             </div>
             <div className={s.input}>
-              <input className={s.messangeIn} type={keyboard} placeholder='Введите сообщение'/>
-              <button className= {s.messangeBtn}>&#10148;</button>
+              <textarea onChange={onMessChange} ref={newMessIn} className={s.messangeIn} placeholder='Введите сообщение'/>
+              <button onClick={addMess} className= {s.messangeBtn}>&#10148;</button>
             </div>
           </div>
         </div>

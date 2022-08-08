@@ -30,11 +30,11 @@
     grid-area: nP; 
 }
 .newPostBtn {
-    width: 50%;
-    height: 50%;
+    width: 40px;
+    height: 40px;
     background-color: rgb(150, 150, 238);
     border: none;
-    border-radius: 50% ;
+    border-radius: 70px ;
     font-size: 30px;
     justify-self: start;
     margin: 2%;
