@@ -13,6 +13,10 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
+.users::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
 .user {
     display: grid;
     grid-template-columns: 30% 70%;
@@ -31,7 +35,12 @@
 }
 .chat {
     display: grid;
-
+    height: 530px;
+    overflow-y: scroll;
+}
+.chat::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 .messang {
     display: grid;
@@ -95,6 +104,9 @@
     .blockMess {
         display: grid;
         grid-template-columns: 1fr;
+    }
+    .dialog {
+        border-radius: 0px 5px 5px 0px;
     }
 }
 @media (max-width: 576px) {
