@@ -10,7 +10,10 @@
     justify-items: center;
     align-items: center;
     grid-gap: 20px;
-    margin: 2%;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
 .avatarBlock {
     display: grid;
@@ -19,6 +22,8 @@
     background-color: rgb(114, 114, 223);
     border-radius: 5px;
     height: 200px;
+    justify-self: center;
+    align-self: center;
 }
 .name p {
     text-align: center;

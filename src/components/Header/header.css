@@ -11,9 +11,14 @@ header {
     margin-left: 10px;
     padding: 0%;
 }
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 80%;
+}
 .menu p {
+    display: block;
     height: auto;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 .search-in {
     width: 240px;
@@ -60,7 +65,7 @@ header {
 
 @media (max-width: 576px) {
     header {
-        grid-template-columns:  25% 60% 15%;
+        grid-template-columns:  35% 50% 15%;
         background-color: rgb(150, 150, 238);
     }
     .ul-header {   
@@ -79,6 +84,12 @@ header {
     }
 }
 @media (max-width: 425px) {
+    header {
+        grid-template-columns:  10% 75% 15%;
+    }
+    .menu p {
+        display: none;
+    }
     .log-in-btn {
         width: 60px;
         height: 20px;
@@ -94,3 +105,4 @@ header {
         margin: 2px;
     }
 }
+

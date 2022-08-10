@@ -1,4 +1,5 @@
 .block-fotos {
+    height: 500px;
     margin: 2%;
 }
 .block-fotos img {
@@ -6,3 +7,9 @@
     height: 200px;
     margin: 10px;
 }
+/* .block-fotos img {
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    justify-self: center;
+} */

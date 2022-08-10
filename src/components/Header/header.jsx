@@ -1,6 +1,7 @@
 import BackgroundImg from '../Profile/Avatar/backgroundImg';
+import MenuBurger from '../Profile/Menu/Burger menu/menuBurger';
 import './header.css';
-import MenuBurger from './menuBurger';
+
 
 const Avatar = (props) => {
   return (
@@ -14,6 +15,7 @@ const Header = () => {
   return (
     <div>
       <header>
+
         <div className="menu">
           <div><MenuBurger /></div>
           <p>Блог космонавта</p>
