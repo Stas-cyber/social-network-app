@@ -8,7 +8,7 @@ const avatar = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Yuri_Gagarin_with_awards.jpg/274px-Yuri_Gagarin_with_awards.jpg',
     'https://testpilot.ru/review/isplii/parachutist/img/danilovich.jpg',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDAJPNMPPdDJU3M_7jQioFOcK59-7yuKaFnEYla6FfTS6rAcBkOMJ39S8mVplxMleApc8&usqp=CAU',
-    'https://www.peoples.ru/military/cosmos/kovalenok/CxEszNcT3wBuP.jpeg',
+    'https://www.biografija.ru/pictures/0af55331.jpg',
     'https://cdnn11.img.sputnik.by/img/102740/32/1027403224_469:0:2516:2047_1920x0_80_0_0_3fe82994d9234f9dc9f29d7ae8c39d3d.jpg',
     'https://knowhistory.ru/sites/default/files/styles/event/public/images/1284237450_tereshkova.jpg?itok=7faDVbIP',
     'https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg'

@@ -1,5 +1,5 @@
 import React from "react";
-import { addPostActionCreate, onPostActionCreate } from "../../../redux/profileReduser";
+import { addPostActionCreate, onPostActionCreate } from "../../../redux/profileReducer";
 import { RibbonPosts } from "../Posts/ribbonPosts";
 const ProfileInfo = (props) => {
 

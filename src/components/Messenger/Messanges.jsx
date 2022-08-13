@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { addMessActionCreate, onMessActionCreate } from '../../redux/dialogsReduser';
+import { addMessActionCreate, onMessActionCreate } from '../../redux/dialogsReducer';
 import { AvatarMini } from '../Profile/Avatar/avatar';
 import s from './Messanges.module.css';
 

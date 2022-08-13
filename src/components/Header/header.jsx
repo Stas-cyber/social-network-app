@@ -3,22 +3,12 @@ import MenuBurger from '../Profile/Menu/Burger menu/menuBurger';
 import './header.css';
 
 
-
-import MenuBurger from './menuBurger';
-
-
 const Avatar = (props) => {
   return (
     <div className='avatarBlock'>
-
       <img src={props.avatar} alt="" />
     </div>
   );
-
-      <img src={props.avatar} alt=""/>
-    </div>
-);
-
 }
 
 const Header = () => {
@@ -35,14 +25,8 @@ const Header = () => {
           <button className='search-btn'>&#128269;</button>
         </div>
         <div className='log-in'>
-
           <Avatar avatar='https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg' />
         </div>
-
-
-          <Avatar avatar='https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg'/>
-        </div>
-        
 
       </header>
       <BackgroundImg />

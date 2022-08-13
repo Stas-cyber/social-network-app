@@ -1,7 +1,9 @@
+
 header {
     display: grid;
     grid-template-columns:  35% 50% 15%;
     background-color: rgb(150, 150, 238);
+    align-items: center;
 }
 .ul-header {
     display: grid;
@@ -18,6 +20,7 @@ header {
 .menu p {
     display: block;
     height: auto;
+    font-size: 20px;
     margin-left: 10px;
 }
 .search-in {
