@@ -4,8 +4,6 @@ import { addMessActionCreate, onMessActionCreate } from '../../redux/dialogsRedu
 import { AvatarMini } from '../Profile/Avatar/avatar';
 import s from './Messanges.module.css';
 
-
-
 const User = (props) => {
   let path = '/messanges/'+ props.id;
   return <div className={s.user}><AvatarMini avatar={props.img}/><Link to={path}>{props.name}</Link></div>
@@ -29,23 +27,23 @@ const Messanges = (props) => {
     
   let onMessChange = () => {
       let text = newMessIn.current.value;
-       props.dispatch(onMessActionCreate(text));
+       props.onMessChange(text);
    } 
 
   let addMess = () => {
-      props.dispatch(addMessActionCreate());
+      props.addMess();
       newMessIn.current.value = '';
-      props.messanger.newMess = '';
+      props.state.newMess = '';
   }
   return (
         <div className={s.container}>
           <div className= {s.users}>
-            {props.messanger.users.map(user => <User id={user.id} img={user.img} name={user.name}/>)}
+            {props.state.users.map(user => <User id={user.id} img={user.img} name={user.name}/>)}
           </div>
           <div className={s.dialog}>
             <div className={s.chat}>
               <div className={s.messang}>
-                {props.messanger.usersMessanges.map(mess=> <Item img={mess.img} mess={mess.mess}/>)}
+                {props.state.usersMessanges.map(mess=> <Item img={mess.img} mess={mess.mess}/>)}
               </div>
             </div>
             <div className={s.input}>

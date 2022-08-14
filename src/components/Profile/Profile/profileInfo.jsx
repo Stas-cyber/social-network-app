@@ -1,19 +1,17 @@
 import React from "react";
-import { addPostActionCreate, onPostActionCreate } from "../../../redux/profileReducer";
 import { RibbonPosts } from "../Posts/ribbonPosts";
+
 const ProfileInfo = (props) => {
 
     let newPostIn = React.createRef(); 
     
     let onPostChange = () => {
         let text = newPostIn.current.value;
-         props.dispatch(onPostActionCreate(text));
+        props.newPostText(text);
      } 
 
     let addPost = () => {
-        props.dispatch(addPostActionCreate());
-        newPostIn.current.value = '';
-        props.posts.newPost = '';
+        props.addPost();
     }
 
     return (
@@ -26,7 +24,7 @@ const ProfileInfo = (props) => {
               <textarea onChange={onPostChange} ref={newPostIn} className='newPostIn' value={props.newPost}></textarea>
               <button onClick={addPost} className= 'newPostBtn'>+</button>
             </div>
-            <div className="ribPosts"><RibbonPosts posts={props.posts} /></div>
+            <div className="ribPosts"><RibbonPosts posts={props.state} /></div>
         </div>
     );
 }
