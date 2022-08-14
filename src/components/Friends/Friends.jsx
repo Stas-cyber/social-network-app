@@ -13,7 +13,7 @@ import s from './Friends.module.css';
 const Friends = (props) => {
  return (
     <div className={s.container}>
-            {props.friends.users.map(user => <Avatar avatar={user.img} name={user.name}/>)}
+            {props.store.FriendsPage.users.map(user => <Avatar avatar={user.img} name={user.name}/>)}
     </div>
  )
 }

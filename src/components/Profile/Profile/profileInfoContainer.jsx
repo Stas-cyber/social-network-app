@@ -1,5 +1,6 @@
 import React from "react";
-import { addPostActionCreate, onPostActionCreate } from "../../../redux/profileReducer";
+import { addPostActionCreate, onPostActionCreate } from "../../../redux/Reducers/profileReducer";
+
 import ProfileInfo from "./profileInfo";
 
 const ProfileInfoContainer = (props) => { 
@@ -13,7 +14,7 @@ const ProfileInfoContainer = (props) => {
     }
 
     return (
-        <ProfileInfo newPostText={onPostChange} addPost={addPost} store={props.store} state={props.state}/>
+        <ProfileInfo newPostText={onPostChange} addPost={addPost} store={props.store} state={props.store.getState()}/>
     );
 }
 

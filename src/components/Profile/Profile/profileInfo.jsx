@@ -24,7 +24,7 @@ const ProfileInfo = (props) => {
               <textarea onChange={onPostChange} ref={newPostIn} className='newPostIn' value={props.newPost}></textarea>
               <button onClick={addPost} className= 'newPostBtn'>+</button>
             </div>
-            <div className="ribPosts"><RibbonPosts posts={props.state} /></div>
+            <div className="ribPosts"><RibbonPosts posts={props.state.PostPage} /></div>
         </div>
     );
 }

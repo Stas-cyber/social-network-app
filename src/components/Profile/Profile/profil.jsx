@@ -18,11 +18,11 @@ const Profil = (props) => {
       <div className='container'>
         <div className="ribMenu"><RibbonMenu /></div>
         <Routes>
-          <Route path='/' element={<ProfileInfoContainer store={props.store} state={props.state}/>}/>
-          <Route path='/messanges/*' element={<MessangesContainer store={props.store} state={props.state}/>}/>
-          <Route path='/news' element={<News news={props.state.NewsPage}/>} />
-          <Route path='/friends' element={<Friends friends={props.state.FriendsPage}/>} />
-          <Route path='/sursribers' element={<Sursribers surscribers={props.state.SurscribersPage}/>} />
+          <Route path='/' element={<ProfileInfoContainer store={props.store}/>}/>
+          <Route path='/messanges/*' element={<MessangesContainer store={props.store}/>}/>
+          <Route path='/news' element={<News store={props.store.getState()}/>} />
+          <Route path='/friends' element={<Friends store={props.store.getState()}/>} />
+          <Route path='/sursribers' element={<Sursribers store={props.store.getState()}/>} />
           <Route path='/music' element={<Music/>} />
           <Route path='/fotos' element={<Fotos/>} />
           <Route path='/videos' element={<Videos/>} />

@@ -17,7 +17,7 @@ const Post = (props) => {
 const RibbonPosts = (props) => {
   return (
     <div className='posts-menu'>
-      {props.posts.PostPage.postData.map(post => <Post avatar={post.avatar} 
+      {props.posts.postData.map(post => <Post avatar={post.avatar} 
                                                       date={post.date} 
                                                       time={post.time} 
                                                       message={post.message} 

@@ -1,7 +1,6 @@
 import React from 'react';
-import { addMessActionCreate, onMessActionCreate } from '../../redux/dialogsReducer';
+import { addMessActionCreate, onMessActionCreate } from '../../redux/Reducers/dialogsReducer';
 import Messanges from './Messanges';
-
 
 const MessangesContainer = (props) => {
     
@@ -13,7 +12,7 @@ const MessangesContainer = (props) => {
       props.store.dispatch(addMessActionCreate());
   }
   return (
-        <Messanges onMessChange={onMessChange} addMess={addMess} store={props.store} state={props.state.MessangePage}/>
+        <Messanges onMessChange={onMessChange} addMess={addMess} store={props.store} state={props.store.getState()}/>
   );
 }
 
