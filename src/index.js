@@ -3,21 +3,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/store/redux-store';
+import store from './redux/store/redux-store'; 
+import {Provider} from "./context";
 
-let funRender = (state) => {
+
+let funRender = () => {
     ReactDOM.render(
 
       <React.StrictMode>
-        <App state={state} dispatch={store.dispatch.bind(store)} store={store}/>
+         <Provider store={store}>
+                <App />
+            </Provider>
       </React.StrictMode>,
       document.getElementById('root')
     );
   }
-funRender(store.getState());
+funRender();
 
 store.subscribe(()=> {
-  funRender(store.getState())
+  funRender()
 });
 
 // If you want to start measuring performance in your app, pass a function

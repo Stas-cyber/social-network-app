@@ -13,6 +13,7 @@ let reducers = combineReducers({
     NewsPage: NewsReducer,
     FriendsPage: friendsReducer,
     SurscribersPage: surscribersReducer
+    
 })
 
 const store = createStore(reducers)
