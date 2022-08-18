@@ -1,19 +1,24 @@
 import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store/redux-store'; 
-import {Provider} from "./context";
+import {Provider} from "react-redux";
 
 
 let funRender = () => {
     ReactDOM.render(
 
       <React.StrictMode>
+        <BrowserRouter>
          <Provider store={store}>
+         
                 <App />
+        
             </Provider>
+            </BrowserRouter>
       </React.StrictMode>,
       document.getElementById('root')
     );

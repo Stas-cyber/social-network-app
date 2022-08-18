@@ -21,7 +21,7 @@ const ProfileInfo = (props) => {
                 <p>О себе: 28 лет, космонавт, живу в скафандре</p>
             </div>
             <div className="newPost">
-              <textarea onChange={onPostChange} ref={newPostIn} className='newPostIn' value={props.newPost}></textarea>
+              <textarea onChange={onPostChange} ref={newPostIn} className='newPostIn' value={props.state.PostPage.newPost}></textarea>
               <button onClick={addPost} className= 'newPostBtn'>+</button>
             </div>
             <div className="ribPosts"><RibbonPosts posts={props.state.PostPage} /></div>
