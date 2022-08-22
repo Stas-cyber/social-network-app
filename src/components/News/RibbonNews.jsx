@@ -5,7 +5,8 @@ import s from "./RibbonNews.module.css"
 const News = (props) => {
     return (
         <div className={s.container}>
-            {props.store.NewsPage.textData.map(post => <Post avatar={post.avatar} date={post.date} time={post.time} message={post.message} img={post.img}/>)}
+            {props.NewsPage.textData.map(post => <Post avatar={post.avatar} 
+            date={post.date} time={post.time} message={post.message} img={post.img}/>)}
         </div>
         
     )

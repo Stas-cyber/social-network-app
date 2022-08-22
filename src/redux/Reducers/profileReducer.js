@@ -23,18 +23,24 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST:{
             let addNewPost = {
                 avatar: 'https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg',
                 message: state.newPost,
                 date: '23 июля',
                 time: '12:45'
             };
-            state.postData.unshift(addNewPost);
-            return state;
-        case UPDATE_NEW_POST:
-            state.newPost = action.newText;
-            return state;
+            let stateCopy = {...state};
+            stateCopy.postData = [...state.postData];
+            stateCopy.postData.unshift(addNewPost);
+            state.newPost = '';
+            return stateCopy;
+        }
+        case UPDATE_NEW_POST: {
+            let stateCopy = {...state};
+            stateCopy.newPost = action.newText;
+            return stateCopy;
+        }
         default: return state;
     }
 }

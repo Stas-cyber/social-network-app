@@ -2,15 +2,15 @@ import React from 'react';
 import './profil.css';
 import RibbonMenu from '../Menu/ribbonMenu';
 import { Routes, Route } from 'react-router-dom';
-import News from '../../News/RibbonNews';
-import { Friends } from '../../Friends/Friends';
-import Sursribers from '../../Sursribers/Sursribers';
 import Settings from '../../SettingsSite/Settings';
 import Videos from '../../VideosSite/Videos';
 import Music from '../../Music/Music';
 import Fotos from '../../Fotos/Fotos';
 import ProfileInfoContainer from './profileInfoContainer';
 import MessangesContainer from '../../Messenger/MessangesContainer';
+import ContainerRibbonNews from '../../News/ContainerRibbonNews';
+import ContainerFriends from '../../Friends/ContainerFriends';
+import ContainerSurcribers from '../../Sursribers/ContainerSurscribers';
 
 const Profil = (props) => {
   return (
@@ -19,9 +19,9 @@ const Profil = (props) => {
         <Routes>
           <Route path='/' element={<ProfileInfoContainer/>}/>
           <Route path='/messanges/*' element={<MessangesContainer/>}/>
-          {/* <Route path='/news' element={<News store={props.store.getState()}/>} />
-          <Route path='/friends' element={<Friends store={props.store.getState()}/>} />
-          <Route path='/sursribers' element={<Sursribers store={props.store.getState()}/>} />  */}
+          <Route path='/news' element={<ContainerRibbonNews/>} />
+          <Route path='/friends' element={<ContainerFriends/>} />
+          <Route path='/sursribers' element={<ContainerSurcribers/>} /> 
           <Route path='/music' element={<Music/>} />
           <Route path='/fotos' element={<Fotos/>} />
           <Route path='/videos' element={<Videos/>} />

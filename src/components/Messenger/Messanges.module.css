@@ -1,4 +1,5 @@
 .container {
+    width: 98%;
     display: grid;
     grid-template-columns: 30% 70%;
     margin: 2%;
@@ -32,10 +33,12 @@
     border-radius: 0px 80px 5px 0px;
     border: 5px solid rgb(167, 167, 167);
     border-left: none;
+    
 }
 .chat {
-    display: grid;
     width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
     height: 530px;
     overflow-y: scroll;
 }
@@ -45,11 +48,12 @@
 }
 .messang {
     display: grid;
+    grid-template-columns: 100%;
     grid-template-rows: 1fr;
     align-self: end;
 }
 .item {
-    width:  auto;
+    max-width:  80%;
     height: auto;
     background-color: rgb(150, 150, 238);
     border-radius: 0px 10px 10px 10px ;
@@ -108,14 +112,11 @@
     }
     .blockMess {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
     }
     .dialog {
         border-radius: 0px 5px 5px 0px;
     }
-    /* .item {
-        max-width: 400px;
-    } */
 }
 @media (max-width: 576px) {
     .user a {
@@ -126,12 +127,6 @@
         grid-template-columns: 78px 1fr;
         margin: 2%;
         height: 600px;
-    }
-    .item1 {
-        margin: 3%;
-    }
-    .item2 {
-        margin: 3%;
     }
     .messangeIn {
         width: 80%;
@@ -146,13 +141,5 @@
         display: grid;
         grid-template-columns: 80% 20%;
         
-    }
-}
-@media (max-width: 375px) {
-    .item1 {
-        margin: 5%;
-    }
-    .item2 {
-        margin: 5%;
     }
 }

@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header/header';
 import Profil from './components/Profile/Profile/profil';
 
-const App = (props) => {
+const App = () => {
   return (
     
     <div className="App">

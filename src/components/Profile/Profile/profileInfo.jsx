@@ -1,6 +1,7 @@
 import React from "react";
 import { RibbonPosts } from "../Posts/ribbonPosts";
 
+
 const ProfileInfo = (props) => {
 
     let newPostIn = React.createRef(); 
@@ -12,6 +13,7 @@ const ProfileInfo = (props) => {
 
     let addPost = () => {
         props.addPost();
+        newPostIn.current.value = '';
     }
 
     return (

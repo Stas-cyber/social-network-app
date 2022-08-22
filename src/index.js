@@ -7,27 +7,20 @@ import reportWebVitals from './reportWebVitals';
 import store from './redux/store/redux-store'; 
 import {Provider} from "react-redux";
 
-
-let funRender = () => {
     ReactDOM.render(
 
       <React.StrictMode>
         <BrowserRouter>
          <Provider store={store}>
-         
                 <App />
-        
-            </Provider>
+          </Provider>
             </BrowserRouter>
       </React.StrictMode>,
       document.getElementById('root')
     );
-  }
-funRender();
+  
 
-store.subscribe(()=> {
-  funRender()
-});
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
