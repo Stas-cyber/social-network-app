@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { addMessActionCreate, onMessActionCreate } from '../../redux/Reducers/dialogsReducer';
 import { AvatarMini } from '../Profile/Avatar/avatar';
 import s from './Messanges.module.css';
+
 
 const User = (props) => {
   let path = '/messanges/'+ props.id;
   return <div className={s.user}><AvatarMini avatar={props.img}/><Link to={path}>{props.name}</Link></div>
-  
 }
 
 const Avatar = (props) => {
@@ -33,7 +32,6 @@ const Messanges = (props) => {
   let addMess = () => {
       props.addMess();
       newMessIn.current.value = '';
-      props.state.newMess = '';
   }
   return (
         <div className={s.container}>

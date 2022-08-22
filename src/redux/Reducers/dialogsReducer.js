@@ -72,16 +72,22 @@ usersMessanges: [
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESS:
+        case ADD_MESS:{
             let addNewMess = {
                 img: 'https://wallpaperengine.info/wp-content/uploads/2018/09/previewfile_1493910771.jpg',
                 mess: state.newMess,
             };
-            state.usersMessanges.push(addNewMess);
-            return state;
-        case UPDATE_NEW_MESS:
-            state.newMess = action.newText;
-            return state;
+            let stateCopy = {...state};
+            stateCopy.usersMessanges = [...state.usersMessanges];
+            stateCopy.usersMessanges.push(addNewMess);
+            state.newMess = '';
+            return stateCopy;
+        }
+        case UPDATE_NEW_MESS:{ 
+            let stateCopy = {...state};
+            stateCopy.newMess = action.newText;
+            return stateCopy;
+        }
         default: return state;
     }
 }

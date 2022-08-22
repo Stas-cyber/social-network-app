@@ -1,20 +1,26 @@
+
 import React from 'react';
+import { connect } from 'tls';
 import { addMessActionCreate, onMessActionCreate } from '../../redux/Reducers/dialogsReducer';
 import Messanges from './Messanges';
 
-const MessangesContainer = (props) => {
-    
-  let onMessChange = (text) => {
-      props.store.dispatch(onMessActionCreate(text));
-   } 
 
-  let addMess = () => {
-      props.store.dispatch(addMessActionCreate());
+let mapStateToProps = (state) => {
+  return {
+    state: state
   }
-  return (
-        <Messanges onMessChange={onMessChange} addMess={addMess} store={props.store} state={props.store.getState()}/>
-  );
 }
+let mapDispatchToProps = (dispatch) => {
+  return {
+    onMessChange: (text) => {
+      dispatch(onMessActionCreate(text));
+    },
+    addMess: () => {
+      dispatch(addMessActionCreate());
+    }
+  }
+}
+  const MessangesContainer = connect(mapStateToProps, mapDispatchToProps)(Messanges);
 
 
 export default MessangesContainer;
