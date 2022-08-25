@@ -1,9 +1,6 @@
-
-import React from 'react';
-import { connect } from 'tls';
+import { connect } from 'react-redux';
 import { addMessActionCreate, onMessActionCreate } from '../../redux/Reducers/dialogsReducer';
 import Messanges from './Messanges';
-
 
 let mapStateToProps = (state) => {
   return {
@@ -20,7 +17,7 @@ let mapDispatchToProps = (dispatch) => {
     }
   }
 }
-  const MessangesContainer = connect(mapStateToProps, mapDispatchToProps)(Messanges);
 
+const MessangesContainer = connect(mapStateToProps, mapDispatchToProps)(Messanges)
 
 export default MessangesContainer;

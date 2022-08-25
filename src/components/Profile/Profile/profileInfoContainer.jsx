@@ -1,21 +1,40 @@
-import React from "react";
 import { addPostActionCreate, onPostActionCreate } from "../../../redux/Reducers/profileReducer";
-
+import {connect} from "react-redux";
 import ProfileInfo from "./profileInfo";
 
-const ProfileInfoContainer = (props) => { 
-    
-    let onPostChange = (text) => {
-        props.store.dispatch(onPostActionCreate(text));
-    } 
+// const ProfileInfoContainer = (props) => {
+//     return (<MyContext.Consumer>
+//         {
+//             (store) => {
+//                 let onPostChange = (text) => {
+//                     store.dispatch(onPostActionCreate(text));
+//                 }
 
-    let addPost = () => {
-        props.store.dispatch(addPostActionCreate());
+//                 let addPost = () => {
+//                     store.dispatch(addPostActionCreate());
+//                 }
+
+//               return <ProfileInfo newPostText={onPostChange} addPost={addPost} state={store.getState()} />
+//             }
+//         }
+//     </MyContext.Consumer>
+//     );
+// }
+
+let mapStateToProps = (state) => {
+    return {
+        state: state
     }
-
-    return (
-        <ProfileInfo newPostText={onPostChange} addPost={addPost} store={props.store} state={props.store.getState()}/>
-    );
+    
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        newPostText: text => dispatch(onPostActionCreate(text)),
+        addPost: () => dispatch(addPostActionCreate())
+        
+    }
+}
+const ProfileInfoContainer = connect(mapStateToProps, mapDispatchToProps)(ProfileInfo);
 
 export default ProfileInfoContainer;

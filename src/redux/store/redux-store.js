@@ -13,8 +13,11 @@ let reducers = combineReducers({
     NewsPage: NewsReducer,
     FriendsPage: friendsReducer,
     SurscribersPage: surscribersReducer
+    
 })
 
-const store = createStore(reducers)
+const store = createStore(reducers);
+
+window.store = store;
 
 export default store;
